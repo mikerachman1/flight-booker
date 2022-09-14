@@ -36,3 +36,21 @@
   </div>
 
 <% end %>
+
+<%= form_with url: "bookings/new/", method: "get" do |f| %>
+  <% @available_flights.each do |flight| %>
+    <% departure_airport = flight.from_airport.code %>
+    <% arrival_airport = flight.to_airport.code %>
+    <% selected_datetime = flight.scheduled_on %>
+
+    <div>
+      <%= radio_button_tag(:flight, flight.id) %>
+      <%= departure_airport %>
+      <%= selected_datetime %>
+      <%= arrival_airport %>
+    </div>
+  <% end %>
+
+  <%= hidden_field_tag :passenger_count, params[:passenger_count] %>
+  <%= f.submit "Continue" %>
+<% end %>

@@ -15,17 +15,16 @@ end
 
 airports = Airport.create([
   { code: 'PHL' },
-  { code: 'CHI' },
-  { code: 'LAX' }
+  { code: 'CHI' }
 ])
 
 flights = Flight.create([
-  { scheduled_on: "2022-1-01 08:00:00", duration: 400, from_airport_id: 1, to_airport_id: 2 },
-  { scheduled_on: "2022-1-01 10:00:00", duration: 600, from_airport_id: 2, to_airport_id: 3 },
-  { scheduled_on: "2022-1-01 16:00:00", duration: 330, from_airport_id: 3, to_airport_id: 1 },
-  { scheduled_on: "2022-1-02 08:00:00", duration: 800, from_airport_id: 2, to_airport_id: 1 },
-  { scheduled_on: "2022-1-02 10:00:00", duration: 220, from_airport_id: 3, to_airport_id: 1 },
-  { scheduled_on: "2022-1-02 16:00:00", duration: 460, from_airport_id: 1, to_airport_id: 3 },
-  { scheduled_on: "2022-1-03 08:00:00", duration: 500, from_airport_id: 2, to_airport_id: 1 },
-  { scheduled_on: "2022-1-03 11:00:00", duration: 100, from_airport_id: 1, to_airport_id: 2 }
+  { scheduled_on: "2022-1-01", depart_time: "08:00:00", duration: 400, from_airport_id: 1, to_airport_id: 2 },
+  { scheduled_on: "2022-1-01", depart_time: "10:00:00", duration: 400, from_airport_id: 2, to_airport_id: 1 },
+  { scheduled_on: "2022-1-01", depart_time: "16:00:00", duration: 400, from_airport_id: 1, to_airport_id: 2 },
+  { scheduled_on: "2022-1-01", depart_time: "20:00:00", duration: 400, from_airport_id: 2, to_airport_id: 1 },
+  { scheduled_on: "2022-1-02", depart_time: "08:00:00", duration: 400, from_airport_id: 1, to_airport_id: 2 },
+  { scheduled_on: "2022-1-02", depart_time: "10:00:00", duration: 400, from_airport_id: 2, to_airport_id: 1 },
+  { scheduled_on: "2022-1-02", depart_time: "16:00:00", duration: 400, from_airport_id: 1, to_airport_id: 2 },
+  { scheduled_on: "2022-1-02", depart_time: "20:00:00", duration: 400, from_airport_id: 2, to_airport_id: 1 }
 ])
