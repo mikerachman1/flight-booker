@@ -41,14 +41,19 @@
   <% @available_flights.each do |flight| %>
     <% departure_airport = flight.from_airport.code %>
     <% arrival_airport = flight.to_airport.code %>
-    <% selected_datetime = flight.scheduled_on %>
+    <% selected_date = flight.scheduled_on %>
+    <% depart_time = flight.depart_time.strftime("%H:%M") %>
+    <% duration = flight.duration %>
 
     <div>
       <%= radio_button_tag(:flight, flight.id) %>
-      <%= departure_airport %>
-      <%= selected_datetime %>
-      <%= arrival_airport %>
+      Origin: <%= departure_airport %><br>
+      Date: <%= selected_date %><br>
+      Time: <%= depart_time %><br>
+      Duration: <%= duration %> minutes<br>
+      Destination: <%= arrival_airport %><br>
     </div>
+    <br><br>
   <% end %>
 
   <%= hidden_field_tag :passenger_count, params[:passenger_count] %>
