@@ -1,0 +1,7 @@
+<h1>New Booking:</h1>
+
+<h3>Flight date: <%= @selected_flight.scheduled_on %></h3>
+<h3>Departure Time: <%= @selected_flight.depart_time.strftime("%H:%M") %></h3>
+<h3>Duration: <%= @selected_flight.duration %> minutes</h3>
+<h3>Departing Airport: <%= @selected_flight.from_airport.code %></h3>
+<h3>Arriving Airport: <%= @selected_flight.to_airport.code %></h3>
