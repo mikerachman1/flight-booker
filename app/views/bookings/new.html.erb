@@ -5,3 +5,17 @@
 <h3>Duration: <%= @selected_flight.duration %> minutes</h3>
 <h3>Departing Airport: <%= @selected_flight.from_airport.code %></h3>
 <h3>Arriving Airport: <%= @selected_flight.to_airport.code %></h3>
+<h3>Passenger Count: <%= @passenger_count %></h3>
+
+<%= form_with model: @booking do |f| %>
+  <% i = 1 %>
+  <%= f.fields_for :passengers, @booking.passengers do |passengers_data| %>
+    <%= "Passenger #{i}" %>
+    <%= passengers_data.text_field :name, placeholder: "Passenger's name", required: true, class: "input" %>
+    <%= passengers_data.email_field :email, placeholder: "email@address.com", required: true, class: "input" %>
+    <% i += 1 %>
+    <br><br>
+  <% end %>
+  <%= f.hidden_field :flight_id, value: params[:flight] %>
+  <%= f.submit 'Complete Booking' %>
+<% end %>
