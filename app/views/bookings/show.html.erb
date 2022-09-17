@@ -1,0 +1,20 @@
+<h1>Your Booking:</h1>
+
+<h3>Flight date: <%= @booking.flight.scheduled_on %></h3>
+<h3>Departure Time: <%= @booking.flight.depart_time.strftime("%H:%M") %></h3>
+<h3>Duration: <%= @booking.flight.duration %> minutes</h3>
+<h3>Departing Airport: <%= @booking.flight.from_airport.code %> </h3>
+<h3>Arriving Airport: <%= @booking.flight.to_airport.code %></h3>
+
+<h2>Passenger Information</h2>
+  <% i = 1 %>
+  <% @booking.passengers.each do |passenger| %>
+    <h4>Passenger #<%= "#{i}" %></h4>
+    <ul>
+      <li>Name: <%= passenger.name %></li>
+      <li>Email: <%= passenger.email %></li>
+    </ul>
+    <% i += 1 %>
+  <% end %>
+
+<h1>Have a nice trip!</h1>
