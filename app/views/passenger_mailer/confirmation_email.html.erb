@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Confirmation of Upcoming Flight</h1>
+  <br><br>
+  <p>You have successfully signed up for your flight!</p>
+  <br><br>
+  <h1>Your Booking:</h1>
+  <br><br>
+  <h3>Flight date: <%= @booking.flight.scheduled_on %></h3>
+  <h3>Departure Time: <%= @booking.flight.depart_time.strftime("%H:%M") %></h3>
+  <h3>Duration: <%= @booking.flight.duration %> minutes</h3>
+  <h3>Departing Airport: <%= @booking.flight.from_airport.code %> </h3>
+  <h3>Arriving Airport: <%= @booking.flight.to_airport.code %></h3>
+  <br><br>
+  <h4>Have a nice Trip!</h4>
+</body>
+</html>

@@ -1,0 +1,14 @@
+Confirmation of Upcoming Flight
+=================================
+
+You have successfully signed up for your flight!
+
+Your Booking:
+
+Flight date: <%= @booking.flight.scheduled_on %>
+Departure Time: <%= @booking.flight.depart_time.strftime("%H:%M") %>
+Duration: <%= @booking.flight.duration %> minutes
+Departing Airport: <%= @booking.flight.from_airport.code %>
+Arriving Airport: <%= @booking.flight.to_airport.code %>
+
+Have a nice trip!
